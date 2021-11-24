@@ -1,0 +1,29 @@
+<nav class="nav nav-pills nav-justified">
+  <a class="nav-link {{tab === 0 ? 'active' : ''}}" routerLink="/navigation" [queryParams]="{tab: '0'}" (click)="routeHandler()">Income</a>
+  <a class="nav-link {{tab === 1 ? 'active' : ''}}" routerLink="/navigation" [queryParams]="{tab: '1'}" (click)="routeHandler()">Investment</a>
+  <a class="nav-link {{tab === 2 ? 'active' : ''}}" routerLink="/navigation" [queryParams]="{tab: '2'}" (click)="routeHandler()">Outcome</a>
+  <a class="nav-link {{tab === 3 ? 'active' : ''}}" routerLink="/navigation" [queryParams]="{tab: '3'}" (click)="routeHandler()">Loan</a>
+</nav>
+
+<div *ngIf="cards.length; else elseBlock">
+  <div class="label">
+    <h3>Name</h3>
+    <h3>Account</h3>
+  </div>
+  <hr>
+  <div *ngFor="let item of cards">
+    <div class="card">
+      <div class="card--name">
+        <span class="name">{{item.name.first}}</span>
+      </div>
+      <div class="card--amount">
+        <span class="amount">{{item.amount}}</span>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <h1 class="center">No data</h1>
+</ng-template>

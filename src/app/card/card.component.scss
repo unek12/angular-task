@@ -1,0 +1,33 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  div {
+    width: 50%;
+  }
+  &--name {
+    display: flex;
+    justify-content: center;
+  }
+  &--amount {
+    display: flex;
+    border: none;
+    justify-content: center;
+  }
+}
+
+.label {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
